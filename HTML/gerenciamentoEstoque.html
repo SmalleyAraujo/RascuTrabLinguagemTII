@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque de Veículos</title>
+    <link rel="stylesheet" href="../styles/gerenciamentoEstoque.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Estoque de Veículos</h1>
+        
+        <h2>Editar Quantidades</h2>
+        <table>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>               
+                <th>Quantidade</th>               
+            </tr>
+            <tr>
+                <td>Ford</td>
+                <td>Fiesta</td>
+                <td>2020</td>                
+                <td><span id="quantity-1">5</span> <button class="edit-button" onclick="editQuantity(1)">Editar</button></td>
+            </tr>
+            <tr>
+                <td>Chevrolet</td>
+                <td>Cruze</td>
+                <td>2019</td>                
+                <td><span id="quantity-2">8</span> <button class="edit-button" onclick="editQuantity(2)">Editar</button></td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </table>
+
+        <h2>Lista de Veículos Disponíveis</h2>
+        <ul class="vehicle-list">
+            <li>Ford Fiesta 2020 (ABC-1234)</li>
+            <li>Chevrolet Cruze 2019 (XYZ-5678)</li>
+            <!-- Adicione mais veículos conforme necessário -->
+        </ul>
+
+        <h2>Excluir Veículo</h2>
+        <div>
+            <label for="vehicle-id">ID do Veículo: </label>
+            <input type="text" id="vehicle-id">
+            <button class="edit-button" onclick="deleteVehicle()">Excluir</button>
+        </div>
+
+        <h2>Adicionar Novo Veículo</h2>
+        <div class="add-vehicle">
+            <div id="section1">
+                <div>
+                    <label for="marca">Marca: </label>
+                    <input type="text" id="marca">
+                </div>
+                <div>
+                    <label for="modelo">Modelo: </label>
+                    <input type="text" id="modelo">
+                </div>
+                <div>
+                    <label for="ano">Ano: </label>
+                    <input type="text" id="ano">
+                </div>
+                <div>
+                    <label for="placa">Placa: </label>
+                    <input type="text" id="placa">
+                </div>
+            </div>
+            <div id="section2">
+                <div>
+                    <label for="placa">Cor: </label>
+                    <input type="text" id="cor">
+                </div>
+                <div>
+                    <label for="placa">Km: </label>
+                    <input type="text" id="km">
+                </div>
+                <div>
+                    <label for="placa">Preço: </label>
+                    <input type="text" id="preco">
+                </div>
+                
+                <button class="edit-button" onclick="addVehicle()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Simulação de um banco de dados de veículos
+        const vehiclesDatabase = [
+            { id: 1, marca: 'Ford', modelo: 'Fiesta', ano: 2020, placa: 'ABC-1234', quantidade: 5, cor: 'Branco', km:"35.000", preco:"R$15.000,00" },
+            { id: 2, marca: 'Chevrolet', modelo: 'Cruze', ano: 2019, placa: 'XYZ-5678', quantidade: 8, cor: 'Prata', km:"56.000", preco:"R$35.000,00" },
+            // Adicione mais veículos conforme necessário
+        ];
+
+        function editQuantity(vehicleId) {
+            const newQuantity = prompt("Digite a nova quantidade:");
+            if (newQuantity !== null) {
+                const vehicle = vehiclesDatabase.find(v => v.id === vehicleId);
+                if (vehicle) {
+                    vehicle.quantidade = parseInt(newQuantity);
+                    document.getElementById(`quantity-${vehicleId}`).textContent = newQuantity;
+                }
+            }
+        }
+
+        function deleteVehicle() {
+            const vehicleId = parseInt(document.getElementById('vehicle-id').value);
+            const index = vehiclesDatabase.findIndex(vehicle => vehicle.id === vehicleId);
+
+            if (index !== -1) {
+                vehiclesDatabase.splice(index, 1);
+                displayVehicleList();
+            } else {
+                alert("Veículo não encontrado com o ID fornecido.");
+            }
+        }
+
+        function addVehicle() {
+            const marca = document.getElementById('marca').value;
+            const modelo = document.getElementById('modelo').value;
+            const ano = document.getElementById('ano').value;
+            const placa = document.getElementById('placa').value;
+            const cor = document.getElementById('cor').value;
+            const km = document.getElementById('km').value;
+            const preco = document.getElementById('preco').value;
+
+            const newVehicle = {
+                id: vehiclesDatabase.length + 1,
+                marca,
+                modelo,
+                ano,
+                placa,
+                cor, 
+                km,
+                preco
+            };
+
+            vehiclesDatabase.push(newVehicle);
+            displayVehicleList();
+        }
+
+        function displayVehicleList() {
+            const vehicleList = document.querySelector('.vehicle-list');
+            vehicleList.innerHTML = '';
+
+            vehiclesDatabase.forEach(vehicle => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${vehicle.marca} ${vehicle.modelo} ${vehicle.ano} - Placa: (${vehicle.placa}) - Cor: ${vehicle.cor} - Km: ${vehicle.km} - Preço: ${vehicle.preco}`;
+                vehicleList.appendChild(listItem);
+            });
+        }
+
+        // Inicialize a lista de veículos
+        displayVehicleList();
+    </script>
+</body>
+</html>

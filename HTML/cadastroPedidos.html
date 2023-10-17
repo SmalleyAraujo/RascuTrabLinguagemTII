@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Compra de Veículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Compra de Veículo</h1>
+        
+        <form action="#" method="post">
+            <label for="veiculo">Selecione o Veículo:</label>
+            <select id="veiculo" name="veiculo" required>
+                <option value="">Selecione um Veículo</option>
+                <option value="30000">Carro A - R$ 30,000</option>
+                <option value="25000">Carro B - R$ 25,000</option>
+                <option value="40000">Carro C - R$ 40,000</option>
+                <option value="35000">Carro D - R$ 35,000</option>
+                <option value="28000">Carro E - R$ 28,000</option>
+                <option value="38000">Carro F - R$ 38,000</option>
+                <option value="32000">Carro G - R$ 32,000</option>
+                <option value="37000">Carro H - R$ 37,000</option>
+                <option value="29000">Carro I - R$ 29,000</option>
+                <option value="42000">Carro J - R$ 42,000</option>
+            </select>
+
+            
+
+            <label for="forma-pagamento">Forma de Pagamento:</label>
+            <select id="forma-pagamento" name="forma-pagamento" required>
+                <option value="">Selecione a Forma de Pagamento</option>
+                <option value="financiamento">Financiamento</option>
+                <option value="cartao-credito">Cartão de Crédito</option>
+                <option value="pix">PIX</option>
+            </select>
+            <label for="data">Data:</label>
+            <input type="date" required>
+
+            <input type="submit" value="Cadastrar Compra">
+        </form>
+    </div>
+</body>
+</html>
