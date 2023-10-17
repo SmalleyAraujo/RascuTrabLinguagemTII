@@ -54,17 +54,21 @@
             border-radius: 5px;
         }
 
-        input[type="submit"] {
+        button[type="submit"] {
             background-color: #007bff;
             color: #fff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
-            cursor: pointer;
+            cursor: pointer;            
         }
 
-        input[type="submit"]:hover {
+        button[type="submit"]:hover {
             background-color: #0056b3;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
@@ -96,9 +100,10 @@
 
             <label for="uf">UF:</label>
             <input type="text" id="uf" name="uf" required>
-
-            <input type="submit" value="Cadastrar Cliente">
+            <button type="submit" value="Cadastrar Cliente"><a href="cadastroPedidos.html">Cadastrar Cliente</a></button>
+            
         </form>
+        
     </div>
 </body>
 </html>

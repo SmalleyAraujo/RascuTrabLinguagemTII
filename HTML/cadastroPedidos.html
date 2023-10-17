@@ -43,7 +43,7 @@
             border-radius: 5px;
         }
 
-        input[type="submit"] {
+        button[type="submit"] {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -52,8 +52,12 @@
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
+        button[type="submit"]:hover {
             background-color: #0056b3;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
@@ -88,9 +92,10 @@
             </select>
             <label for="data">Data:</label>
             <input type="date" required>
-
-            <input type="submit" value="Cadastrar Compra">
+            
+            <button type="submit" value="Cadastrar Compra"><a href="cadastroVeiculos.html">Cadastrar Compra</a></button>
         </form>
+        
     </div>
 </body>
 </html>

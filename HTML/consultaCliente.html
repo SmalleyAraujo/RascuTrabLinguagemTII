@@ -53,12 +53,53 @@
         tr:hover {
             background-color: #e0e0e0;
         }
+        #consPedido{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;            
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;            
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Consulta de Clientes</h1>
-        
+        <!-- Formulário de pesquisa -->
+        <form method="post" action="">
+            <label for="filtro">Filtro por Nome, ID ou CPF:</label>
+            <input type="text" name="filtro" id="filtro" placeholder="Digite o filtro">
+            <input type="submit" value="Pesquisar">
+        </form>
+        <div id="consPedido">
+            <button type="button"><a href="consultaPedidos.html">Consultar Pedidos</a></button>
+        </div>
         <table>
             <tr>
                 <th>ID</th>
@@ -106,6 +147,7 @@
             </tr>
             <!-- Adicione mais clientes fictícios conforme necessário -->
         </table>
+       
     </div>
 </body>
 </html>

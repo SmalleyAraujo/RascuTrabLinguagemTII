@@ -53,11 +53,52 @@
         tr:hover {
             background-color: #e0e0e0;
         }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;            
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;            
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        #consPedido{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Consulta de Pedidos</h1>
+        <!-- Formulário de pesquisa -->
+        <form method="post" action="">
+            <label for="filtro">Filtro por Nome, ID-pedido ou CPF:</label>
+            <input type="text" name="filtro" id="filtro" placeholder="Digite o filtro">
+            <input type="submit" value="Pesquisar">
+        </form>
+        <div id="consPedido">
+            <button type="button"><a href="gerenciamentoEstoque.html">Consultar Gerencial</a></button>
+        </div>
         
         <table>
             <tr>
