@@ -59,6 +59,33 @@
             text-decoration: none;
             color: white;
         }
+        .container2 {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .order {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .order h2 {
+            margin: 0;
+        }
+        .order p {
+            margin: 0;
+        }
+        .cancel-button {
+            background-color: #f00;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +123,24 @@
             <button type="submit" value="Cadastrar Compra"><a href="cadastroVeiculos.html">Cadastrar Compra</a></button>
         </form>
         
+    </div>
+    <div class="container2">
+        <div class="order">
+            <h2>Pedido #123</h2>
+            <p>Veículo: Toyota Camry</p>
+            <p>Data de Compra: 2023-10-18</p>
+            <p>Preço: R$ 50,000</p>
+            <button class="cancel-button">Cancelar Compra</button>
+            <p>Obs.: Em caso de cancelamento prazo máximo de 7 dias!</p>
+        </div>
+        <div class="order">
+            <h2>Pedido #124</h2>
+            <p>Veículo: Honda Civic</p>
+            <p>Data de Compra: 2023-10-19</p>
+            <p>Preço: R$ 45,000</p>
+            <button class="cancel-button">Cancelar Compra</button>
+            <p>Obs.: Em caso de cancelamento prazo máximo de 7 dias!</p>
+        </div>
     </div>
 </body>
 </html>
