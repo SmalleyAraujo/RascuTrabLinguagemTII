@@ -90,6 +90,9 @@
 <body>
     <div class="container">
         <h1>Consulta de Pedidos</h1>
+        <div style="display: flex; justify-content: end;">
+            <button class="edit-button">Sair</button>
+        </div>
         <!-- Formulário de pesquisa -->
         <form method="post" action="">
             <label for="filtro">Filtro por Nome, ID-pedido ou CPF:</label>
@@ -97,7 +100,7 @@
             <input type="submit" value="Pesquisar">
         </form>
         <div id="consPedido">
-            <button type="button"><a href="gerenciamentoEstoque.html">Cadastrar veículos</a></button>
+            <button type="button"><a href="cadastroVeiculos.html">Cadastrar veículos</a></button>
         </div>
         
         <table>
@@ -130,6 +133,10 @@
             </tr>
             <!-- Adicione mais pedidos conforme necessário -->
         </table>
+        <div style="display: flex; justify-content:space-between;">
+            <a href="consultaCliente.html" style="text-decoration: none; color: black;"><img src="../icon/keyboard_return_FILL0_wght400_GRAD0_opsz24.svg" alt="">Voltar</a>            
+        </div>
+        
     </div>
 </body>
 </html>

@@ -10,6 +10,9 @@
 <body>
     <div class="container">
         <h1>Cadastro de Veículos</h1>
+        <div style="display: flex; justify-content: end;">
+            <button class="edit-button">Sair</button>
+        </div>
         <form action="cad_pro.php" method="POST">
             <label for="marca">Marca:</label>
             <input type="text" id="marca" name="marca" required>
@@ -38,6 +41,10 @@
         <div id="consPedido">
             <button type="button"><a href="gerenciamentoEstoque.html">Controle de Estoque</a></button>
         </div>
+        <div style="display: flex; justify-content:space-between;">
+            <a href="consultaPedidos.html" style="text-decoration: none; color: black;"><img src="../icon/keyboard_return_FILL0_wght400_GRAD0_opsz24.svg" alt="">Voltar</a>            
+        </div>
+        
     </div>
 </body>
 </html>
