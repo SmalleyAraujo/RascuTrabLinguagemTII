@@ -149,7 +149,7 @@
 
             vehiclesDatabase.forEach(vehicle => {
                 const listItem = document.createElement('li');
-                listItem.textContent = `${vehicle.marca} ${vehicle.modelo} ${vehicle.ano} - Placa: (${vehicle.placa}) - Cor: ${vehicle.cor} - Km: ${vehicle.km} - Preço: ${vehicle.preco}`;
+                listItem.textContent = `${vehicle.id} ${vehicle.marca} ${vehicle.modelo} ${vehicle.ano} - Placa: (${vehicle.placa}) - Cor: ${vehicle.cor} - Km: ${vehicle.km} - Preço: ${vehicle.preco}`;
                 vehicleList.appendChild(listItem);
             });
         }
